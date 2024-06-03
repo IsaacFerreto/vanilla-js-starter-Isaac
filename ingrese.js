@@ -1,15 +1,19 @@
 //POST
-import {obtenerDatos} from "ingrese.js";
+import { obtenerDatos } from "./obtener";
+import { ingresoTexto } from "./src";
 
 export async function darDatos() {
     try {
       let tarea =
       {
         id:Date.now(),
-        nombre:input.value,
+        nombre:ingresoTexto.value,    
         estado:false
       }
-      const respuesta = await fetch(" ",{
+
+      
+      
+      const respuesta = await fetch("http://localhost:3000/api/task",{
         method: "POST",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
