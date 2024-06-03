@@ -1,5 +1,7 @@
 //POST
-async function darDatos() {
+import {obtenerDatos} from "ingrese.js";
+
+export async function darDatos() {
     try {
       let tarea =
       {
@@ -21,4 +23,5 @@ async function darDatos() {
         console.error(error);
     }
     //line to put the get function
+    obtenerDatos()
 }
