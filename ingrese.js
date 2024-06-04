@@ -1,10 +1,12 @@
 //POST
 import { obtenerDatos } from "./obtener";
-import { ingresoTexto } from "./src";
+import { ingresoTexto,contenedorNombre,contenedorCheckbox,contenedorBoton } from "./src";
+
 
 //Main pourpuse of this function is to submmit informmation to an object,
 // that object is going to added to an array and the array to the local host and to the screen
 export async function darDatos() {
+  contenedorNombre.innerHTML = ""
     try {
         //Object creation
       let tarea =
@@ -26,12 +28,18 @@ export async function darDatos() {
       console.log(`Se agrego satisfactoriamente la tarea ${tarea.nombre}`);  
       const datos = await respuesta.json()
       console.log(datos);
+               //Checkbox submit in screen add div contenedorCheckbox
+               let la= document.createElement('INPUT') 
+               la.setAttribute("type","checkbox")      
+               contenedorCheckbox.appendChild(la)
 // for to add elements to the screen
       datos.forEach(element => {
-        let li= document.createElement('p')
+        //name submit in screen add div contenedorNombre
+        let li= document.createElement('p') 
          li.innerHTML=element.nombre
-         let body = document.body
-         body.appendChild(li)
+         contenedorNombre.appendChild(li)
+
+         //buton submit in screen add div contenedorboton
      });
     } catch (error) {
         console.error(error);

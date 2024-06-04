@@ -1,4 +1,6 @@
 //GET
+
+
 //this function is to get information from local host to page
 export async function obtenerDatos() {
     try {
