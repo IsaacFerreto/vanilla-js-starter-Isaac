@@ -21,4 +21,3 @@ ingresoTexto.addEventListener("keypress", (e)=>{
     }
 }) 
 
-
