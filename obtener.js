@@ -1,9 +1,11 @@
 //GET
 
+
 let contedorAzul = document.getElementById("CTNcontainer")
 
 //this function is to get information from local host to page
 export async function obtenerDatos() {
+        let idX = "cerrar"
     try {
         contedorAzul.innerHTML = ""
         const respuesta = await fetch("http://localhost:3000/api/task")
@@ -20,11 +22,11 @@ export async function obtenerDatos() {
             p.appendChild(close)
             div.appendChild(p)
             contedorAzul.appendChild(div)
-            close.id('cerrar')
-            close.className('dele')
-
-            let stop = document.getElementById('cerrar')
-
+            close.id=tarea.id
+            // close.id('cerrar')
+            //close.className('dele') 
+           // let stop = document.getElementById('cerrar')
+           
           async  function vicino() {
                 fetch('https://example.com/delete-item/' + id, {
                     method: 'DELETE',
@@ -33,8 +35,8 @@ export async function obtenerDatos() {
                     .then(res => console.log(res))
             }
 
-            stop.addEventListener('click', vicino)
-            location.reload();
+            //stop.addEventListener('click', vicino)
+             
             //   var span = document.createElement("SPAN");
             //   span.className = "close";
             //   span.appendChild(div)
