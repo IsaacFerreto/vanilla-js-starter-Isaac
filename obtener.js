@@ -1,4 +1,4 @@
-import { darDatos } from "./ingrese"
+
 
 //GET
 const contedorAzul = document.getElementById("CTNcontainer")
@@ -13,7 +13,10 @@ export async function obtenerDatos() {
          console.log(datos.lenght);
         //this for each is used for the creation of the HTML elements
         if (datos.length==0||datos.length=='') {
-            document.querySelector('.vacio').style.display = 'block';
+            document.querySelector('#vacio').style.display = 'block';
+        }else{
+            document.querySelector('#vacio').style.display = 'none';
+
         }
         datos.forEach(tarea => {
             let div = document.createElement("div")
@@ -47,6 +50,10 @@ export async function obtenerDatos() {
         console.log(datos);
         console.log(`Este log es para probar contador primero vamos a llamar a datos .lenght ${datos.length}`);
         document.getElementById("cuantas").innerHTML=datos.length;
+if (datos.estado) {
+     
+}
+
     } catch (error) {
         console.error(error);
     }
