@@ -2,6 +2,8 @@
 
 //GET
 const contedorAzul = document.getElementById("CTNcontainer")
+contedorAzul.className='Maindiv'
+contedorAzul.style.backgroundColor='red';
 
 
 //this function is to get information from local host to page
@@ -20,6 +22,7 @@ export async function obtenerDatos() {
         }
         datos.forEach(tarea => {
             let div = document.createElement("div")
+            div.className='EachDiv'
             let p = document.createElement("p")
             let checkBox = document.createElement("input")
             let close = document.createElement("SPAN")

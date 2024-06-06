@@ -1,8 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+    
+  }
+
+
+  body{
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1{
+    position: relative;
+    margin-top: 1%;
+    margin-left: -80%;
+    margin-bottom: 5%;
+  }
+  .texto{
+
+  }
+
 .CTNcontainer{
     display: grid;
     grid-template-columns: auto auto auto;
     background-color: #2196F3;
-    padding: 10px;
 }
 
 
@@ -12,4 +39,27 @@ cursor: pointer;
 }
 .empty{
     display: none;
+}
+.CTNdiv{
+
+    display: flex;
+    padding: 10px;
+}
+.CenterDiv{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.CTNcontainer{
+
+    background-color: blueviolet;
+    width: 500px;
+    height: 500px;
+}   
+.MainDiv{
+    
+    text-align: left;
+    border: 2px solid black;
+}
+.EachDiv{
+    margin-bottom: 10px;
 }
