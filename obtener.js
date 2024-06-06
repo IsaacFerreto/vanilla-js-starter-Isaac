@@ -12,7 +12,7 @@ export async function obtenerDatos() {
         const datos = await respuesta.json()
          console.log(datos.lenght);
         //this for each is used for the creation of the HTML elements
-        if (datos.lenght==0||datos.lenght=='') {
+        if (datos.length==0||datos.length=='') {
             document.querySelector('.vacio').style.display = 'block';
         }
         datos.forEach(tarea => {
@@ -27,14 +27,13 @@ export async function obtenerDatos() {
             p.appendChild(close)
             div.appendChild(p)
             contedorAzul.appendChild(div)
-            console.log(checkBox.value);
+            
             checkBox.value=!checkBox;
-            console.log(checkBox.value);
-            console.log(tarea.estado);
+       
             //Call to PUTT
             checkBox.addEventListener("change",()=>{
-                cambio(tarea.id)
-                console.log(tarea.estado);
+                cambio(tarea)
+           
             })            
             close.id=tarea.id
             close.className='delet'
@@ -46,19 +45,21 @@ export async function obtenerDatos() {
         
         //This function is going to be use to delete a item from the list
         console.log(datos);
+        console.log(`Este log es para probar contador primero vamos a llamar a datos .lenght ${datos.length}`);
+        document.getElementById("cuantas").innerHTML=datos.length;
     } catch (error) {
         console.error(error);
     }
+
 }
 
 async  function vicino(id) {
-    console.log("LLEGA");
+    console.log("LLEGA a funcion para borrar");
         try {
           fetch(`http://localhost:3000/api/task/${id}`, {
               method: 'DELETE',
           })
-              .then(res => res.text()) // or res.json()
-              .then(res => console.log(res))
+              
               console.log(`Se elimino la tarea con id ${id}`);
       }catch (error) {
           console.log(error);
@@ -69,23 +70,22 @@ async  function vicino(id) {
 
 
 //PUT
-async function cambio(id) {
+async function cambio(objeto) {
     //little get to get .estado to change that data
     const respuesta = await fetch("http://localhost:3000/api/task")
         const datos = await respuesta.json()
         //declaration of the object i want to change
-    let tarea = {
-        estado : !datos.estado
-    }
-    
-    const putRespuesta = await fetch(`http://localhost:3000/api/task/${id}`, {
-    method: 'PUT',
-    headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(tarea)
-})
-let datosPut = await putRespuesta.json()
+        console.log(`Console log objeto.estado ANTES de cambio ${objeto.estado}`);
+        objeto.estado = !objeto.estado
+    const putRespuesta = await fetch(`http://localhost:3000/api/task/${objeto.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(objeto)
+    })
+    console.log(`Console log objeto.estado DESPUES de cambio ${objeto.estado}`);
+let datosPut = await putRespuesta.json() 
 console.log(datosPut);
 }
 
