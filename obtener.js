@@ -70,12 +70,14 @@ async  function vicino(id) {
 
 //PUT
 async function cambio(id) {
-    
+    //little get to get .estado to change that data
     const respuesta = await fetch("http://localhost:3000/api/task")
         const datos = await respuesta.json()
+        //declaration of the object i want to change
     let tarea = {
         estado : !datos.estado
     }
+    
     const putRespuesta = await fetch(`http://localhost:3000/api/task/${id}`, {
     method: 'PUT',
     headers: {

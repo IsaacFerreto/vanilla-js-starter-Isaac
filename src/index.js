@@ -17,9 +17,9 @@ agregar.addEventListener('click', darDatos)
 
 
 // Execute a function when the user presses a key on the keyboard
+
 ingresoTexto.addEventListener("keypress", (e)=>{
     if(e.key=='Enter'){
         darDatos()
     }
 }) 
-
