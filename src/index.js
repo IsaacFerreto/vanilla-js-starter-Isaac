@@ -2,6 +2,8 @@ import { obtenerDatos } from "../obtener";
 import { darDatos } from "../ingrese";
 //calling GET to be dure that information is always going to be updated
 obtenerDatos();
+
+
 export let contenedorNombre= document.getElementById('taskCnt')
 export let contenedorCheckbox=document.getElementById('checkboxCTN')
 export let contenedorBoton=document.getElementById('btnCTN')

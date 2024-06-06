@@ -6,7 +6,10 @@
 }
 
 
-.dele{
+.delet{
 cursor: pointer;
 
+}
+.empty{
+    display: none;
 }
