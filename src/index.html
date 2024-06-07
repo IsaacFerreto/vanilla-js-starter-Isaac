@@ -9,10 +9,12 @@
 
 <body>
 	<h1>To Do List!</h1>
-	<p id="vacio" class="empty">No Hay nada aqui</p>
-	<input type="text" id="texto" class="texto">
+	<input type="text" id="texto" class="texto" placeholder="Add a task">
+	<p id="vacio" class="empty">Add a task</p>
+	<p id="full" class="empty">No pending task left</p>
+	
 	<div id="btnCTN">
-		<button id="agregar" type="button">Add</button>
+		<button id="agregar" class="boton" type="button">Click here to Add</button>
 	</div>
 
 	<div class="CTNdiv">
@@ -28,7 +30,7 @@
 		<p id="howManyC"></p>
 	</div>
 	</div>
-
+<span class="border"></span>
 	<div id="CTNcontainer" class="CTNcontainer">
 		<div id="taskCnt"></div>
 		<div id='checkboxCTN'>

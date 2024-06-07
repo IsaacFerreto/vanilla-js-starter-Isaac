@@ -22,6 +22,7 @@ export async function obtenerDatos() {
             document.querySelector('#vacio').style.display = 'none';
         }
 
+
         contC=0
         contP=0
 
@@ -35,13 +36,17 @@ export async function obtenerDatos() {
             checkBox.type = "checkbox"
             p.innerHTML = tarea.nombre
             close.innerHTML = 'X'
-            p.appendChild(checkBox)
-            p.appendChild(close)
+            close.className='equis'
+            checkBox.className = "box"
+            close.style.color="red"
+            
+            p.className='txt'
+            div.appendChild(close)
+            div.appendChild(checkBox)
             div.appendChild(p)
             contedorAzul.appendChild(div)
 
 
-            checkBox.className = "lo_que_sea"
             checkBox.value = !checkBox;
             checkBox.checked = tarea.estado
 
@@ -78,7 +83,7 @@ export async function obtenerDatos() {
                 }
                 
                 console.log("Vamos a probar contador de VERDADERAS " + contC);
-                
+
                 console.log(`Las pendientes son ${contP}`);
                 updateCounterDisplay()
             })
@@ -147,4 +152,11 @@ async function cambio(objeto) {
 function updateCounterDisplay() {
     document.getElementById("howManyC").innerHTML = contC;
     document.getElementById("howManyP").innerHTML = contP;
+    if (contP==0&&contC!=0) {
+        
+        document.querySelector('#full').style.display = 'block';
+    } else {
+        document.querySelector('#full').style.display = 'none';
+    }
+    
 }

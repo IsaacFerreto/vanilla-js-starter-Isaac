@@ -23,7 +23,11 @@
     margin-bottom: 5%;
   }
   .texto{
-
+    width: 75%;
+    height: 5%;
+    box-shadow: 10px 5px 5px gray;
+    margin-bottom: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
 .CTNcontainer{
@@ -33,17 +37,21 @@
 }
 
 
+
 .delet{
 cursor: pointer;
 
 }
 .empty{
     display: none;
+    font-style: italic;
+    font-size: 60px
 }
 .CTNdiv{
 
     display: flex;
     padding: 10px;
+    border-bottom: 2px solid black;
 }
 .CenterDiv{
     margin-left: 20px;
@@ -61,5 +69,48 @@ cursor: pointer;
     border: 2px solid black;
 }
 .EachDiv{
+    display: flex;
     margin-bottom: 10px;
+    
 }
+.EachDiv:hover{
+    background-color: #ccc;
+    color: white;
+    
+}
+.boton{
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    background-color: black;
+    width: 75vh;
+    height: 3vw;
+    cursor: pointer;
+}
+.boton:hover {
+    background-color: #555555;
+    color: white;
+  }
+  .equis{
+    display: inline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 10px;
+    
+  }
+  .equis:hover{
+font-size: 50px;
+    
+  }
+  .box{
+    cursor: pointer;
+display: inline;
+margin-right: 10px;
+margin-left: 7px;
+}
+.box:hover{
+    box-shadow: 1px 1px 5px gray;
+    }
+txt{
+    display: inline;
+
+  }
