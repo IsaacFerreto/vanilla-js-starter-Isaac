@@ -108,6 +108,7 @@ export async function obtenerDatos() {
 
 
     } catch (error) {
+        alert("SYSTEM ERRROR"+Error)
         console.error(error);
     }
 
@@ -122,6 +123,7 @@ async function vicino(id) {
 
         console.log(`Se elimino la tarea con id ${id}`);
     } catch (error) {
+        alert("SYSTEM ERRROR "+Error)
         console.log(error);
     }
     //GET

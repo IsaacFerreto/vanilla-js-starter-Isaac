@@ -6,7 +6,7 @@ import { ingresoTexto,contenedorNombre,contenedorCheckbox,contenedorBoton } from
 //Main pourpuse of this function is to submmit informmation to an object,
 // that object is going to added to an array and the array to the local host and to the screen
 export async function darDatos() {
-  if (ingresoTexto.value==''||null) {
+  if (ingresoTexto.value.trim()==''||ingresoTexto.value.trim()==null) {
     alert('Space is empty')
   }else{
     
@@ -32,6 +32,7 @@ export async function darDatos() {
     console.log(datos);
     ingresoTexto.value=''
   } catch (error) {
+    alert("SYSTEM ERRROR "+error)
       console.error(error);
   }
   obtenerDatos()
